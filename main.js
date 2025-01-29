@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation
+
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -8,14 +8,14 @@ document.querySelectorAll('nav a').forEach(link => {
     });
   });
   
-  // Highlight active navigation links on scroll
+  //nav link highlight functionality
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
     let currentSection = '';
   
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 60; // Account for sticky header height
+      const sectionTop = section.offsetTop - 60; 
       const sectionHeight = section.offsetHeight;
       if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
         currentSection = section.getAttribute('id');
@@ -30,7 +30,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
   });
   
-  // Scroll to top button
+
   const scrollToTopButton = document.createElement('button');
   scrollToTopButton.textContent = '↑';
   scrollToTopButton.classList.add('scroll-to-top');
