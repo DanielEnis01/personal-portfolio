@@ -149,3 +149,42 @@ body {
     text-decoration: none;
   }
   
+  /*fancy github button link stuff*/   
+
+  .gitbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+  }
+
+  .gitbutton .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
+
+  .gitbutton svg path {
+    transition: 400ms;
+  }
+
+  .gitbutton:hover {
+    background-color: transparent;
+  }
+
+  .gitbutton:hover .text {
+    color: #181717;
+  }
+
+  .gitbutton:hover svg path {
+    fill: #181717;
+  }
