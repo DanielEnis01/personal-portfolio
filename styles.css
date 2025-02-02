@@ -98,7 +98,7 @@ body {
     border: 1px solid #2b2b2b;
   }
   
-  .projects-section, .experience-section {
+  .projects-sectionc {
     padding: 50px 0;
   }
   
@@ -110,27 +110,14 @@ body {
   
   .project-card {
     background: #fff;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #2b2b2b;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: box-shadow 0.3s;
   }
   
   .project-card:hover {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .timeline {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .timeline li {
-    margin-bottom: 20px;
-  }
-  
-  .timeline h3 {
-    font-size: 1.5em;
   }
   
   .footer {
@@ -148,8 +135,90 @@ body {
   .footer a:hover {
     text-decoration: none;
   }
+
+  /*road map related css*/
+
+    .changelog-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #333;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .changelog {
+      position: relative;
+      padding-left: 30px;
+  }
+
+  .changelog::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background:  #333;
+  }
+
+  .changelog-item {
+      position: relative;
+      margin-bottom: 20px;
+  }
+
+  .changelog-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 20px;
+      height: 2px;
+      background:  #333;
+      transform: translateY(-50%);
+  }
+
+  .changelog-content {
+      position: relative;
+      padding: 15px;
+      background: #444;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .changelog-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .changelog-content h3 {
+      margin: 0;
+      color: #fff;
+  }
+
+  .changelog-content p {
+      margin: 10px 0 20px;
+      color: #ccc;
+  }
+
+  .changelog-date {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #ccc;
+      font-size: 14px;
+  }
+
+  .changelog-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ccc;
+    font-size: 14px;
+  }
   
-  /*fancy github button link stuff*/   
+  /*imported logos for buttons*/   
 
   .gitbutton {
     display: flex;
@@ -157,8 +226,8 @@ body {
     align-items: center;
     padding: 10px 15px;
     gap: 15px;
-    background-color: #181717;
-    outline: 3px #181717 solid;
+    background-color: #2b2b2b;
+    outline: 3px #2b2b2b solid;
     outline-offset: -3px;
     border-radius: 5px;
     border: none;
@@ -167,7 +236,7 @@ body {
   }
 
   .gitbutton .text {
-    color: white;
+    color: #f5f5f5;
     font-weight: 700;
     font-size: 1em;
     transition: 400ms;
@@ -182,9 +251,9 @@ body {
   }
 
   .gitbutton:hover .text {
-    color: #181717;
+    color: #2b2b2b;
   }
 
   .gitbutton:hover svg path {
-    fill: #181717;
+    fill: #2b2b2b;
   }
