@@ -22,24 +22,24 @@ body {
   }
   
   .main-header .name {
-    font-size: 5em;
+    font-size: 5.2em;
     font-weight: bold;
+    margin-bottom: -2.5px;
   }
   
   .main-header .tagline {
-    font-size: 2em;
-    margin-top: 5px;
+    margin-top: -1px;
+    font-size: 1.5em;
     color: #d6d6d6;
   }
 
-  /* may add image back in future (<img src="Images\IMG_8144.png" alt= "ProfilePicture" class="profile-pic">)
   .main-header img {
     width: 150px;
     height: 150px;
     border-radius: 25%;
     border: 3px solid #f5f5f5;
   }
-    */
+    
   
   .navbar {
     background: #2b2b2b;
@@ -80,9 +80,9 @@ body {
     gap: 30px;
   }
   
-  .about-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+  .about-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
   }
   
   .other-pages{
@@ -289,4 +289,3 @@ body {
     color: #ccc;
     font-size: 14px;
   }
-  
