@@ -1,11 +1,11 @@
-
 body {
   font-family: "Times New Roman", serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  color: #2b2b2b;
-  background-color: #f5f5f5;
+  color: whitesmoke;
+  background: linear-gradient(0.25turn, #333738, #5d5992ea, #2d247cbb);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -13,13 +13,13 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  color: whitesmoke;
 }
 
-/*header (animations at bottom)*/
 .main-header {
   height: 100vh;
-  background: linear-gradient(to bottom right, #1a1a1a, #333);
-  color: #f5f5f5;
+  background: url('Images/headerback.jpg') no-repeat center center/cover;
+  color: whitesmoke;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -36,8 +36,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
+  color: whitesmoke;
 }
 
 .main-header .name {
@@ -46,21 +47,24 @@ body {
   margin-bottom: -10px;
   z-index: 2;
   animation: fadeInDown 1.5s ease-out;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .main-header .tagline {
   font-size: 1.8em;
-  color: #d6d6d6;
+  color: whitesmoke;
   margin-top: 10px;
   z-index: 2;
   animation: fadeInUp 1.5s ease-out;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .main-header img {
   width: 120px;
   height: 120px;
   border-radius: 25%;
-  border: 3px solid #f5f5f5;
+  border: 3px solid whitesmoke;
   z-index: 2;
   animation: fadeIn 2s ease-out;
 }
@@ -68,14 +72,13 @@ body {
 .main-content {
   position: relative;
   z-index: 1;
-  background: #f5f5f5;
+  background: whitesmoke;
   padding-top: 50px;
   transition: transform 0.8s ease-in-out;
 }
 
-/*nav*/
 .navbar {
-  background: #2b2b2b;
+  background: #1a1a1a;
   padding: 10px 0;
 }
 
@@ -89,7 +92,7 @@ body {
 }
 
 .nav-links a {
-  color: #f5f5f5;
+  color: whitesmoke;
   text-decoration: none;
   font-weight: bold;
   padding: 8px 15px;
@@ -98,18 +101,17 @@ body {
 }
 
 .nav-links a:hover {
-  background: #f5f5f5;
+  background: whitesmoke;
   color: #2b2b2b;
   border: 1px solid #2b2b2b;
 }
 
-/*ab me*/
 .about-section {
   padding: 50px 0;
 }
 
 .about-card {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -126,7 +128,7 @@ body {
 
 .about-card p {
   font-size: 1.4em;
-  color: #555;
+  color: whitesmoke;
   line-height: 1.8;
 }
 
@@ -139,7 +141,6 @@ body {
   margin-top: 0px; 
 }
 
-/*btns*/
 .btn, .gitbutton {
   display: inline-flex;
   align-items: center;
@@ -147,7 +148,7 @@ body {
   gap: 8px;
   padding: 10px 20px;
   background: #2b2b2b;
-  color: #f5f5f5;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 100px;
   border: 2px solid transparent;
@@ -160,7 +161,7 @@ body {
 }
 
 .btn:hover, .gitbutton:hover {
-  background-color: #f5f5f5;
+  background-color: whitesmoke;
   color: #2b2b2b;
   border: 2px solid #2b2b2b;
   transform: scale(1.05);
@@ -170,7 +171,7 @@ body {
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  fill: #f5f5f5;
+  fill: whitesmoke;
   margin-right: 0px;
 }
 
@@ -178,9 +179,9 @@ body {
   fill: #2b2b2b;
 }
 
-/*project cards / certif cards*/
 .projects-section {
   text-align: center;
+  color: whitesmoke;
   padding: 30px 0;
 }
 
@@ -190,7 +191,7 @@ body {
   gap: 20px;
 }
 
-.other-pages{
+.other-pages {
   text-align: center;
 }
 
@@ -233,7 +234,7 @@ body {
 .card__title {
   margin: 0;
   font-size: 1.2em;
-  color: #f2f2f2;
+  color: whitesmoke;
   font-weight: 700;
 }
 
@@ -264,7 +265,6 @@ body {
   background-image: url('Images/in-progress-bg.jpg');
 }
 
-/*roadmap*/
 .changelog-container {
   width: 90%;
   margin: 0 auto;
@@ -322,20 +322,20 @@ body {
 .changelog-content h3 {
   margin: 0;
   font-size: 1.1em;
-  color: #fff;
+  color: whitesmoke;
 }
 
 .changelog-content p {
   margin: 10px 0;
   font-size: 0.9em;
-  color: #ccc;
+  color: whitesmoke;
 }
 
 .changelog-date {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  color: #ccc;
+  color: whitesmoke;
   font-size: 12px;
 }
 
@@ -343,27 +343,23 @@ body {
   position: absolute;
   top: 5px;
   right: 5px;
-  color: #ccc;
+  color: whitesmoke;
   font-size: 12px;
 }
 
-/*contacts*/
 .footer {
   background: #1a1a1a;
-  color: #f5f5f5;
+  color: whitesmoke;
   text-align: center;
   padding: 40px 0; 
 }
-
 
 .contacts {
   display: flex;
   justify-content: center; 
   align-items: center; 
   gap: 20px; 
-  
 }
-
 
 .contacts .social-link1, .contacts .social-link2 {
   display: flex;
@@ -378,7 +374,6 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-
 .contacts .social-link1:hover {
   background-color: #1a1e22;
   animation: bounce_613 0.4s linear;
@@ -389,14 +384,12 @@ body {
   animation: bounce_613 0.4s linear;
 }
 
-
 .contacts svg {
   width: 24px; 
   height: 24px;
   fill: currentColor;
 }
 
-/*animations*/
 @keyframes bounce_613 {
   40% {
     transform: scale(1.4);
@@ -454,7 +447,6 @@ body {
   }
 }
 
-/* mobile */
 @media (min-width: 768px) {
   .main-header .name {
     font-size: 5.2em;
