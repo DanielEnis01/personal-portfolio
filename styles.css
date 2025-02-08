@@ -17,6 +17,15 @@ body {
   color: whitesmoke;
 }
 
+.proj-container {
+  text-align: center;
+  background: #1a1a1a;
+}
+
+.proj-container h2 {
+  display: inline-block;
+}
+
 .main-header {
   height: 100vh;
   background: url('Images/headerback.jpg') no-repeat center center/cover;
