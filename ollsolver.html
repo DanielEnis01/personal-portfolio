@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="img/png" href="Images\portfolio-circle-image.png">
+    <title>OLLSolver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class= "container">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <header class="main-header">
+        <div class= "container">
+          <h1 class= "name">Orientation Last Layer Solver</h1>
+          <p class="tagline">The following is a breakdown of the first step of my python based Rubix Cube Solver, wherein it solves the upper most layer of the cube.</p>
+        </div>
+    </header>
+
+    <section id="TechStack" class="stack-section">
+        <div class= "container">
+
+            <div class= "proj-container">
+                <h2>Tech Stack</h2>
+              </div>
+            <div class="tech-stack">
+                <p>
+                    Python
+                </p>
+                <p>
+                    CustomTKinter
+                </p>
+                <p>
+                    Pyinstaller
+                </p>
+            </div>
+
+            <div class="proj-container">
+                <h2>First Release</h2>
+            </div>
+            <div class="image-text-wrapper">
+                <div class="image-container">
+                    <img src="Images\ollsolverprogress2.png" alt="Description">
+                </div>
+                <div class="text-container">
+                    <p>
+                        This is v1.0.0 of OLLSolver. I plan to make multiple GUI updates as I add the other layers.
+                    </p>
+                </div>
+            </div>  
+
+            <div class= "proj-container">
+                <h2>Purpose</h2>
+              </div>
+            <div class="purpose">
+                <p>
+                    The purpose of making the Rubix Cube solver was to develop a deeper understanding of python. I began the project with no knowledge of python and planned to use multiple libaries to further my experience with the language.
+                </p>
+            </div>
+
+            <div class= "proj-container">
+                <h2>The Process</h2>
+              </div>
+            <div class="process">
+                <p>
+                    I approached the idea from multiple fronts, but ended up decided to use two matrices to define the squares and edges of the cube. I used customTKinter to make a grid of buttons, and then changed a value of each square when the button was pressed. This gave me thurough experience with tkinter widgets and python gui as a whole. Initially, I manually typed out each algorithm from memory (from my prior knowledge of rubix cubes), which took an absurd amount of directly mapping the cubes and edges despite minor changes.
+                    <div class="image-text-wrapper">
+                        <div class="image-container">
+                            <img src="Images\image.png" alt="Description">
+                        </div>
+                    </div>  
+                    After taking some time away from the project, I realised using an algorithm to detect rotation of the cube's face would save lots of lines of code and be a more efficient approach. Therefore, instead of making a new pattern for one "U", I had a variable iterate each time the face rotated. Once I finished with the cube's logic, I began researching ways to package my code as an executable. After running into multiple issues trying to learn the windows terminal, I eventually understood my way around setting up virtual environemnts and using pyinstaller to create an executable file for my project.
+                </p>
+            </div>
+
+            <div class= "proj-container">
+                <h2>What I learned</h2>
+              </div>
+            <div class="process">
+                <p>
+                    Overall, my experience with this project helped me create a deeper understanding of both python and python's gui libraries (specifically tkinter and customtkiner). I cycled through every widget ctk had to offer and learned the in's and out's of how pack() and grid() worked and how to style my project to my liking. Furthermore, after hours of struggling with the windows terminal, I can now efficiently navigate paths in my computer with cd and have a deeper understanding of how to manage virtual environments.
+                </p>
+            </div>
+
+          </div>
+    </section>
+
+</body>
+</html>
