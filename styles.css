@@ -378,7 +378,8 @@ body {
 .card__title {
   margin: 0;
   font-size: 1.2em;
-  color: whitesmoke;
+  color: #35426d;
+  background: rgba(26, 19, 56, 0.3)
   font-weight: 700;
 }
 
