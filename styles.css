@@ -136,6 +136,38 @@ body {
   overflow: hidden;
 }
 
+.oll-header {
+  height: 100vh;
+  background: url('Images/rubixicon.webp') no-repeat center center/cover;
+  color: whitesmoke;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.oll-header .name {
+  font-size: 4.5em;
+  font-weight: bold;
+  margin-bottom: -10px;
+  z-index: 2;
+  animation: fadeInDown 1.5s ease-out;
+  color: white;
+  background: rgba(10, 11, 20, 0.36);
+}
+
+.oll-header .tagline {
+  font-size: 1.8em;
+  color: white;
+  margin-top: 10px;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-out;
+  background: rgba(10, 11, 20, 0.36);
+}
+
 .main-header::before {
   content: '';
   position: absolute;
