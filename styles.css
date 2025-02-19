@@ -347,7 +347,7 @@ body {
   justify-content: center;
   overflow: hidden;
   perspective: 1000px;
-  box-shadow: 0 0 0 5px #ffffff80;
+  box-shadow: 0 0 0 5px #0A0B14;
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
