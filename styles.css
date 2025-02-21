@@ -152,20 +152,22 @@ body {
 .oll-header .name {
   font-size: 4.5em;
   font-weight: bold;
+  text-shadow: 2px 2px 4px #2b2c2d;
   margin-bottom: -10px;
   z-index: 2;
   animation: fadeInDown 1.5s ease-out;
   color: white;
-  background: rgba(10, 11, 20, 0.36);
+  background: rgba(215, 209, 183, 0.36);
 }
 
 .oll-header .tagline {
   font-size: 1.8em;
+  text-shadow: 2px 2px 4px #2b2c2d;
   color: white;
   margin-top: 10px;
   z-index: 2;
   animation: fadeInUp 1.5s ease-out;
-  background: rgba(10, 11, 20, 0.36);
+  background: rgba(215, 209, 183, 0.36);
 }
 
 .main-header::before {
@@ -534,9 +536,11 @@ body {
   }
 
   .tech-stack {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: 0;
     align-items: center;
   }
+  
   .about-card p {
     font-size: 1.6em;
   }
