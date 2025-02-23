@@ -329,7 +329,7 @@ body {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -378,7 +378,8 @@ body {
 .card__title {
   margin: 0;
   font-size: 1.2em;
-  color: #35426d;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   font-weight: 700;
 }
 
@@ -407,6 +408,14 @@ body {
 
 .card-2 {
   background-image: url('Images/rubixicon.webp');
+}
+
+.Ecard-1 {
+  background-image: url('Images/acmutd_logo_larger_background.jpg');
+}
+
+.Ecard-2 {
+  background-image: url('Images/DFR-Logo.webp');
 }
 
 .footer {
