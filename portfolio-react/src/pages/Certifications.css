@@ -1,0 +1,225 @@
+.certifications-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.page-header {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #4a5568;
+  font-weight: 300;
+}
+
+.course-plan-section,
+.certificates-section {
+  padding: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.course-plan-card {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.course-plan-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.course-plan-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 0;
+}
+
+.course-plan-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-plan-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.course-plan-link:hover::before {
+  left: 100%;
+}
+
+.course-plan-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.certificate-card {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.certificate-card.placeholder {
+  border-style: dashed;
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.certificate-card.placeholder::before {
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), transparent);
+}
+
+.certificate-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.certificate-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.certificate-card.placeholder .certificate-title {
+  color: #2563eb;
+}
+
+.certificate-description {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.certificate-card.placeholder .certificate-description {
+  color: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certifications-page {
+    padding-top: 70px;
+  }
+
+  .page-header {
+    padding: 2rem 0;
+  }
+
+  .course-plan-section,
+  .certificates-section {
+    padding: 2rem 0;
+  }
+
+  .course-plan-card {
+    padding: 1.5rem;
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .certificate-card {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .course-plan-card,
+  .certificate-card {
+    margin: 0 1rem;
+  }
+
+  .course-plan-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

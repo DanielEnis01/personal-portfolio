@@ -1,0 +1,129 @@
+.contact-section {
+  padding: 4rem 0;
+  background: rgba(37, 99, 235, 0.05);
+  border-top: 1px solid rgba(37, 99, 235, 0.2);
+  position: relative;
+}
+
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 16px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+}
+
+.social-link:hover {
+  color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+.social-link svg {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+.social-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 0;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-link {
+    min-width: 100px;
+    padding: 1.25rem;
+  }
+
+  .social-link svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 200px;
+  }
+}
