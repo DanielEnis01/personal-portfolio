@@ -65,7 +65,7 @@ const Home = () => {
                 Certifications
               </Link>
               <a 
-                href="/Resume/DanielEnisResume25.pdf" 
+                href="/Resume/DanielEnisResume252.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
