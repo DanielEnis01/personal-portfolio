@@ -23,8 +23,18 @@ const Projects = () => {
       projectUrl: '/portfolio',
       tech: ['React', 'JavaScript', 'CSS3', 'Vite']
     },
-    {
+     {
       id: 3,
+      title: 'Princeton Quant Trading Website',
+      description: 'A full-stack quantitative trading simulation platform for Princeton University',
+      image: '/Images/Screenshot 2025-02-02 213016.png',
+      githubUrl: 'https://github.com/tom05919/PQT-website-2025',
+      liveUrl: 'princeton-quant.com',
+      projectUrl: '/pqtWebsite',
+      tech: ['React', 'Next.JS', 'RESTful', 'Python']
+    },
+    {
+      id: 4,
       title: 'OLL Solver',
       description: 'Python-based Rubik\'s Cube solver focusing on the Orientation of the Last Layer',
       image: '/Images/rubixicon.webp',
