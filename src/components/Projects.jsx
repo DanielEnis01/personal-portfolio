@@ -27,9 +27,9 @@ const Projects = () => {
       id: 3,
       title: 'Princeton Quant Trading Website',
       description: 'A full-stack quantitative trading simulation platform for Princeton University',
-      image: 'Screenshot 2025-11-19 at 10.39.54 AM.jpg',
+      image: '/Images/Screenshot 2025-11-19 at 10.39.54 AM.jpg',
       githubUrl: 'https://github.com/tom05919/PQT-website-2025',
-      liveUrl: 'princeton-quant.com',
+      liveUrl: 'https://princeton-quant.com',
       projectUrl: '/pqtWebsite',
       tech: ['React', 'Next.JS', 'RESTful', 'Python']
     },
