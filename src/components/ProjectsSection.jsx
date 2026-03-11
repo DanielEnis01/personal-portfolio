@@ -40,7 +40,7 @@ const projects = [
     title: 'FastApp - Application Tracker',
     description: 'A job application tracking system to help users organize and manage their applications.',
     longDescription:
-      'FastApp was created to solve a real problem I and my friends faced during the job application process. Keeping track of multiple applications across different platforms, remembering recruiter information, application statuses, and login credentials was becoming overwhelming. This app provides a centralized solution to organize and manage all job applications in one place. Features include status tracking, recruiter management, and multi-platform search integration.',
+      'FastApp was created to solve a real problem my friends and I faced during the job application process. Keeping track of multiple applications across different platforms, remembering recruiter information, application statuses, and login credentials was becoming overwhelming. This app provides a centralized solution to organize and manage all job applications in one place. Features include status tracking, recruiter management, and multi-platform search integration.',
     challenges: 'Designing a schema that was flexible enough to handle various job board formats while remaining searchable was a key focus. I had to iterate on the Firebase structure to balance read performance with write simplicity.',
     learned: 'I learned the importance of centralized data management and how to build efficient, scalable tracking systems for high-velocity user data.',
     image: '/Images/fastapp.png',
@@ -168,7 +168,23 @@ function ProjectModal({ project, onClose }) {
           <div>
             <h3 className="text-[#88C0D0] text-sm uppercase tracking-widest font-bold mb-3">Project Overview</h3>
             <p className="text-[#ECEFF4]/75 leading-relaxed text-base md:text-lg whitespace-pre-line">
-              {project.longDescription}
+              {project.longDescription.split(/(\[.*?\]\(.*?\))/g).map((part, i) => {
+                const match = part.match(/\[(.*?)\]\((.*?)\)/)
+                if (match) {
+                  return (
+                    <a
+                      key={i}
+                      href={match[2]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#88C0D0] hover:underline font-bold"
+                    >
+                      {match[1]}
+                    </a>
+                  )
+                }
+                return part
+              })}
             </p>
           </div>
 

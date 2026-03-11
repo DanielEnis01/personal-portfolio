@@ -12,7 +12,7 @@ const hackathons = [
     category: 'Hackathon',
     description: 'Sponsor Track Winner at HackAi 2026 for commut.r.',
     longDescription:
-      'This was my first hackathon ever attended and, fortunately enough, my first win. My and my partner Tyler Belken (https://github.com/Tbelkk) came up with the idea for commut.r as commuters ourselves. We won the NebulaLabs Sponsored track, which was one of the 4 main sponsors of the event, due to our unique use of their API during development. The student data provided from their API was the root of our formula that calculated predictions. It was a very good experience overall and I look forward to future hackathons.',
+      'This was my first hackathon ever attended and, fortunately enough, my first win. My partner [Tyler Belken](https://github.com/Tbelkk) and I came up with the idea for commut.r as commuters ourselves. We won the NebulaLabs Sponsored track, which was one of the 4 main sponsors of the event, due to our unique use of their API during development. The student data provided from their API was the root of our formula that calculated predictions. It was a very good experience overall and I look forward to future hackathons.',
     challenges: 'Developing a reliable parking prediction algorithm in under 24 hours while learning the Nebula API on the fly was an intense challenge. We had to quickly iterate on our logic to ensure the predictions were both accurate and useful.',
     learned: 'I learned how to work under extreme time constraints and the power of leveraging community-driven APIs to solve local problems. It also taught me the importance of rapid prototyping and effective teamwork.',
     image: '/Images/hackai_logo_v2.png',
@@ -111,7 +111,23 @@ function HackathonModal({ hackathon, onClose }) {
           <div>
             <h3 className="text-[#88C0D0] text-sm uppercase tracking-widest font-bold mb-3">Event Overview</h3>
             <p className="text-[#ECEFF4]/75 leading-relaxed text-base md:text-lg whitespace-pre-line">
-              {hackathon.longDescription}
+              {hackathon.longDescription.split(/(\[.*?\]\(.*?\))/g).map((part, i) => {
+                const match = part.match(/\[(.*?)\]\((.*?)\)/)
+                if (match) {
+                  return (
+                    <a
+                      key={i}
+                      href={match[2]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#88C0D0] hover:underline font-bold"
+                    >
+                      {match[1]}
+                    </a>
+                  )
+                }
+                return part
+              })}
             </p>
           </div>
 
