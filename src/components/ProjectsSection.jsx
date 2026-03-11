@@ -65,6 +65,19 @@ const projects = [
     year: '2025',
   },
   {
+    title: 'Pinglyn - Real-time Chatting App',
+    description: 'A full-stack chatting application written from scratch with real-time messaging and user tracking.',
+    longDescription:
+      'Pinglyn is a real-time chatting application built from the ground up to explore the complexities of full-stack communication systems. It uses Node.js and Socket.io for instantaneous message delivery, while MongoDB and Firebase handle user metadata and session tracking. The front end was carefully designed in [Figma](https://www.figma.com/) to ensure a premium user experience, although the project is still in active development.\n\nThis project serves as a deep dive into scalable backend architectures and the nuances of state synchronization in real-time environments.',
+    challenges: 'Implementing reliable message persistence while managing high-frequency socket events was a major technical hurdle. I had to design a robust event-handling system to prevent data loss during rapid client-server interactions.',
+    learned: 'I mastered the fundamentals of real-time synchronization and learned how to translate high-fidelity Figma designs into functional, reactive React components.',
+    image: '/Images/pinglyn_hero.png',
+    technologies: ['Node.js', 'Socket.io', 'MongoDB', 'Firebase', 'React', 'Figma'],
+    github: 'https://github.com/Tbelkk/Pinglyn',
+    featured: true,
+    year: '2025',
+  },
+  {
     title: 'Personal Website',
     description: 'A modern React portfolio website showcasing my projects and skills.',
     longDescription:
@@ -310,7 +323,7 @@ export function ProjectsSection() {
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-400 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
+              className="group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-400 w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-12px)] max-w-[500px]"
               style={{ backgroundColor: 'rgba(59,66,82,0.7)', borderColor: 'rgba(136,192,208,0.12)' }}
             >
               <div className="relative overflow-hidden">
