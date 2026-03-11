@@ -24,7 +24,7 @@ const projects = [
     image: '/Images/commutr_hero.png',
     technologies: ['React', 'Flask', 'Gemini AI', 'Nebula API', 'Google Maps'],
     github: 'https://github.com/DanielEnis01/Commutr',
-    live: 'http://commutr.org/',
+    live: 'https://commutr.org/',
     devpost: 'https://devpost.com/software/commutr-ephl5o',
     featured: true,
     year: '2026',
