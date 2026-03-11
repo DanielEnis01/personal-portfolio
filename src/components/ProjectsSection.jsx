@@ -5,7 +5,7 @@ import { ExternalLink, Github, ArrowUpRight, ArrowLeft, Code2, Calendar, Trophy,
 
 const projects = [
   {
-    title: 'Vector Fit — AI Outfit App',
+    title: 'Vector Fit',
     description: 'AI-powered mobile app for wardrobe organization and outfit generation using computer vision and generative AI.',
     longDescription:
       'Vector Fit is an AI-powered mobile application that helps users organize their wardrobe and generate outfit recommendations using computer vision and generative AI. Users can upload clothing items through a live camera interface, automatically categorize them with a deep learning model (ResNet-50), and receive personalized outfit suggestions based on their digital closet. The backend leverages AWS Bedrock for contextual reasoning (weather, occasion) to suggest outfits interactively, while AWS Lambda and S3 handle serverless image processing and storage.\n\nThis was developed during my time with AIM, and AIS sponsored mentor program. In this program, we developed AI based apps amongst a team of students and were judged by employees from various tech companies. Our hard work landed us on the podium for the event and greatly improved my skills with computer vision models.',
@@ -20,7 +20,7 @@ const projects = [
     github: 'https://github.com/AI-Mentorship/ClosetSensei'
   },
   {
-    title: 'Commut.r - AI Commuter Assistant',
+    title: 'Commut.r',
     description: 'AI assistant for UTD commuters predicting traffic and parking using Nebula APIs and voice AI.',
     longDescription:
       'Commut.r is an AI assistant for UTD commuters inspired by the stressful task of navigating campus parking. Our app leverages NebulaLabs’s API to access student schedule data and calculate real-time projections on parking lot vacancy. By analyzing these variables, the system predicts peak traffic times and directs drivers to the most optimal parking lots. A voice-driven AI assistant facilitates safe navigation while the backend architecture, split into Flask and Node.js, manages complex integrations with ElevenLabs TTS, OpenWeather, and Gemini APIs. We were honored to be named the HackAi 2026 Sponsor Track Winner for this solution.',
@@ -37,7 +37,7 @@ const projects = [
     video: 'https://youtu.be/UCs95glatJU'
   },
   {
-    title: 'FastApp - Application Tracker',
+    title: 'FastApp',
     description: 'A job application tracking system to help users organize and manage their applications.',
     longDescription:
       'FastApp was created to solve a real problem my friends and I faced during the job application process. Keeping track of multiple applications across different platforms, remembering recruiter information, application statuses, and login credentials was becoming overwhelming. This app provides a centralized solution to organize and manage all job applications in one place. Features include status tracking, recruiter management, and multi-platform search integration.',
@@ -51,13 +51,13 @@ const projects = [
     year: '2025',
   },
   {
-    title: 'Princeton Quant Trading Website',
+    title: 'Princeton Quant Trading',
     description: 'A full-stack quantitative trading simulation platform for Princeton University.',
     longDescription:
       'A full-stack quantitative trading simulation platform built for Princeton University. This project involved creating a robust system for simulating trading environments, managing user accounts, and providing real-time data visualizations for quantitative analysis.',
     challenges: 'Ensuring absolute data integrity during high-frequency simulation updates was critical. We used WebSockets and optimized React state management to prevent UI lagging during intense trading bursts.',
     learned: 'I learned how to design robust, low-latency interfaces and manage complex data flows for financial simulation environments.',
-    image: '/Images/Screenshot 2025-11-19 at 10.39.54 AM.jpg',
+    image: '/Images/pqt_logo.png',
     technologies: ['React', 'Next.JS', 'RESTful', 'Python'],
     github: 'https://github.com/tom05919/PQT-website-2025',
     live: 'https://princeton-quant.com',
@@ -65,7 +65,7 @@ const projects = [
     year: '2025',
   },
   {
-    title: 'Pinglyn - Real-time Chatting App',
+    title: 'Pinglyn',
     description: 'A full-stack chatting application written from scratch with real-time messaging and user tracking.',
     longDescription:
       'Pinglyn is a real-time chatting application built from the ground up to explore the complexities of full-stack communication systems. It uses Node.js and Socket.io for instantaneous message delivery, while MongoDB and Firebase handle user metadata and session tracking. The front end was carefully designed in [Figma](https://www.figma.com/) to ensure a premium user experience, although the project is still in active development.\n\nThis project serves as a deep dive into scalable backend architectures and the nuances of state synchronization in real-time environments.',
