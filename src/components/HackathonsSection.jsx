@@ -12,7 +12,9 @@ const hackathons = [
     category: 'Hackathon',
     description: 'Sponsor Track Winner at HackAi 2026 for commut.r.',
     longDescription:
-      'This was my first hackathon ever attended and, fortunately enough, my first win. My and my partner Tyler Belken (https://github.com/Tbelkk) came up with the idea for commut.r as commuters ourselves. We won the NebulaLabs Sponsered track, which was one of the 4 main sponsers of the event, due to our unique use of their API during development. The student data provided from their API was the root of our formula that calculated predictions. It was a very good experience overall and I look forward to future hackathons.',
+      'This was my first hackathon ever attended and, fortunately enough, my first win. My and my partner Tyler Belken (https://github.com/Tbelkk) came up with the idea for commut.r as commuters ourselves. We won the NebulaLabs Sponsored track, which was one of the 4 main sponsors of the event, due to our unique use of their API during development. The student data provided from their API was the root of our formula that calculated predictions. It was a very good experience overall and I look forward to future hackathons.',
+    challenges: 'Developing a reliable parking prediction algorithm in under 24 hours while learning the Nebula API on the fly was an intense challenge. We had to quickly iterate on our logic to ensure the predictions were both accurate and useful.',
+    learned: 'I learned how to work under extreme time constraints and the power of leveraging community-driven APIs to solve local problems. It also taught me the importance of rapid prototyping and effective teamwork.',
     image: '/Images/hackai_logo_v2.png',
     tags: ['Nebula API', 'Flask', 'React', 'Innovation'],
     link: 'https://hackai-2026.devpost.com/',
@@ -48,7 +50,7 @@ function HackathonModal({ hackathon, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[200] overflow-y-auto"
+      className="fixed inset-0 z-[400] overflow-y-auto"
       style={{ backgroundColor: '#2E3440' }}
     >
       <div
@@ -59,7 +61,7 @@ function HackathonModal({ hackathon, onClose }) {
         }}
       />
 
-      <div className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4"
+      <div className="fixed top-0 left-0 right-0 z-[450] flex items-center justify-between px-6 py-4"
         style={{ backgroundColor: 'rgba(46,52,64,0.92)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(136,192,208,0.12)' }}
       >
         <motion.button
@@ -69,7 +71,7 @@ function HackathonModal({ hackathon, onClose }) {
           className="flex items-center gap-2 text-[#88C0D0] hover:text-[#ECEFF4] transition-colors duration-200"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span className="text-sm">Back to Portfolio</span>
+          <span className="text-sm font-bold">Back to Portfolio</span>
         </motion.button>
 
         <span className={`px-3 py-1 rounded-full text-xs border ${cat.bg} ${cat.text} ${cat.border}`}>
@@ -104,7 +106,33 @@ function HackathonModal({ hackathon, onClose }) {
         <h1 className="text-3xl md:text-4xl font-bold text-[#ECEFF4] mb-4">{hackathon.title}</h1>
         <div className="w-16 h-0.5 mb-8" style={{ background: 'linear-gradient(to right, #A3BE8C, #88C0D0)' }} />
 
-        <p className="text-[#ECEFF4]/75 leading-relaxed mb-10 text-base md:text-lg">{hackathon.longDescription}</p>
+        {/* Structured Description */}
+        <div className="space-y-8 mb-12">
+          <div>
+            <h3 className="text-[#88C0D0] text-sm uppercase tracking-widest font-bold mb-3">Event Overview</h3>
+            <p className="text-[#ECEFF4]/75 leading-relaxed text-base md:text-lg whitespace-pre-line">
+              {hackathon.longDescription}
+            </p>
+          </div>
+
+          {hackathon.challenges && (
+            <div className="pl-6 border-l-2 border-[#D08770]/30">
+              <h3 className="text-[#D08770] text-sm uppercase tracking-widest font-bold mb-3">Challenges</h3>
+              <p className="text-[#ECEFF4]/75 leading-relaxed text-base italic">
+                {hackathon.challenges}
+              </p>
+            </div>
+          )}
+
+          {hackathon.learned && (
+            <div className="pl-6 border-l-2 border-[#A3BE8C]/30">
+              <h3 className="text-[#A3BE8C] text-sm uppercase tracking-widest font-bold mb-3">What I Learned</h3>
+              <p className="text-[#ECEFF4]/75 leading-relaxed text-base">
+                {hackathon.learned}
+              </p>
+            </div>
+          )}
+        </div>
 
         <div className="mb-10 p-6 rounded-xl border" style={{ backgroundColor: 'rgba(59,66,82,0.7)', borderColor: 'rgba(136,192,208,0.15)' }}>
           <h3 className="text-[#88C0D0] text-sm uppercase tracking-widest font-bold mb-4">Key Highlights</h3>
@@ -176,11 +204,7 @@ export function HackathonsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#ECEFF4] mb-6">Hackathons</h2>
-          <div className="w-24 h-1 mx-auto mb-6" style={{ background: 'linear-gradient(to right, #A3BE8C, #88C0D0)' }} />
-          <p className="text-[#ECEFF4]/55 max-w-2xl mx-auto">
-            Competitive coding and rapid prototyping — where ideas turn into working solutions in hours.{' '}
-            <span style={{ color: '#88C0D0' }} className="font-medium">Click any card to learn more.</span>
-          </p>
+          <div className="w-24 h-1 mx-auto" style={{ background: 'linear-gradient(to right, #A3BE8C, #88C0D0)' }} />
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6">

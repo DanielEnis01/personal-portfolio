@@ -12,7 +12,12 @@ const activities = [
     category: 'Leadership',
     description: 'Participating in the Association for Computing Machinery mentorship program at UTD.',
     longDescription:
-      'As a mentee in the UTD ACM (Association for Computing Machinery) mentorship program, I have been actively involved in structured sessions focusing on technical growth, career development, and networking within the computer science community. This program has provided me with valuable insights into industry best practices and has allowed me to collaborate with experienced mentors on real-world coding challenges.',
+      'As a mentee in the UTD ACM (Association for Computing Machinery) mentorship program, I have been actively involved in structured sessions focusing on technical growth, career development, and networking within the computer science community.',
+    keypoints: [
+      'Mastered technical growth strategies through expert-led labs',
+      'Developed core professional networking and career planning skills',
+      'Collaborated on real-world coding challenges with senior mentors'
+    ],
     image: '/Images/acmutd_logo_larger_background.jpg',
     tags: ['Mentorship', 'Networking', 'Technical Growth'],
     link: 'https://acmutd.co/',
@@ -30,7 +35,12 @@ const activities = [
     category: 'Community',
     description: 'Member of the Society of Automotive Engineers software development team.',
     longDescription:
-      'In the UTD SAE (Society of Automotive Engineers) Software Division, I work as part of a multi-disciplinary team to develop software solutions for automotive applications. This involves collaborating with engineers to design and implement systems that improve vehicle performance and safety through innovative software engineering.',
+      'In the UTD SAE (Society of Automotive Engineers) Software Division, I work as part of a multi-disciplinary team to develop software solutions for automotive applications.',
+    keypoints: [
+      'Engineered real-time data processing modules for vehicle telemetry',
+      'Bridged hardware and software gaps through cross-team collaboration',
+      'Built diagnostic tools using low-level software engineering principles'
+    ],
     image: '/Images/DFR-Logo.webp',
     tags: ['Software Dev', 'Automotive', 'Team Collaboration'],
     link: 'https://dallasformularacing.com/about',
@@ -48,7 +58,12 @@ const activities = [
     category: 'Education',
     description: 'Mentee in the Artificial Intelligence Society mentorship program.',
     longDescription:
-      'The AIS (Artificial Intelligence Society) AIM program has offered me a deep dive into the world of AI and machine learning. As a mentee, I explore complex algorithms, data processing techniques, and the ethical implications of AI. This experience has been instrumental in shaping my understanding of how AI can be applied to solve complex problems in various industries.',
+      'The AIS (Artificial Intelligence Society) AIM program has offered me a deep dive into the world of AI and machine learning.',
+    keypoints: [
+      'Developed and evaluated ML models for real-world datasets',
+      'Implemented advanced data preprocessing and classification techniques',
+      'Mastered core Python AI libraries during technical sprint'
+    ],
     image: '/Images/aim.png',
     tags: ['AI/ML', 'Data Processing', 'Research'],
     link: 'https://aisutd.org/',
@@ -88,7 +103,7 @@ function ActivityModal({ activity, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[200] overflow-y-auto"
+      className="fixed inset-0 z-[400] overflow-y-auto"
       style={{ backgroundColor: '#2E3440' }}
     >
       {/* Topography hint pattern */}
@@ -101,7 +116,7 @@ function ActivityModal({ activity, onClose }) {
       />
 
       {/* Fixed top bar */}
-      <div className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4"
+      <div className="fixed top-0 left-0 right-0 z-[450] flex items-center justify-between px-6 py-4"
         style={{ backgroundColor: 'rgba(46,52,64,0.92)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(136,192,208,0.12)' }}
       >
         <motion.button
@@ -111,7 +126,7 @@ function ActivityModal({ activity, onClose }) {
           className="flex items-center gap-2 text-[#88C0D0] hover:text-[#ECEFF4] transition-colors duration-200"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span className="text-sm">Back to Portfolio</span>
+          <span className="text-sm font-bold">Back to Portfolio</span>
         </motion.button>
 
         <span className={`px-3 py-1 rounded-full text-xs border ${cat.bg} ${cat.text} ${cat.border}`}>
@@ -150,8 +165,27 @@ function ActivityModal({ activity, onClose }) {
         <h1 className="text-3xl md:text-4xl font-bold text-[#ECEFF4] mb-4">{activity.title}</h1>
         <div className="w-16 h-0.5 mb-8" style={{ background: 'linear-gradient(to right, #A3BE8C, #88C0D0)' }} />
 
-        {/* Long description */}
-        <p className="text-[#ECEFF4]/75 leading-relaxed mb-10 text-base md:text-lg">{activity.longDescription}</p>
+        {/* Simplified Description & Keypoints */}
+        <div className="space-y-8 mb-12">
+          <div>
+            <h3 className="text-[#88C0D0] text-sm uppercase tracking-widest font-bold mb-3">Activities & Contributions</h3>
+            <p className="text-[#ECEFF4]/75 leading-relaxed text-base md:text-lg whitespace-pre-line">
+              {activity.longDescription}
+            </p>
+          </div>
+
+          <div className="pl-6 border-l-2 border-[#A3BE8C]/30">
+            <h3 className="text-[#A3BE8C] text-sm uppercase tracking-widest font-bold mb-3">What I Learned & Used</h3>
+            <ul className="space-y-2 text-[#ECEFF4]/80 text-base italic">
+              {activity.keypoints.map((pt, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#A3BE8C] shrink-0" />
+                  {pt}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         {/* Highlights */}
         <div className="mb-10 p-6 rounded-xl border" style={{ backgroundColor: 'rgba(59,66,82,0.7)', borderColor: 'rgba(136,192,208,0.15)' }}>
@@ -226,11 +260,7 @@ export function ExtracurricularsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#ECEFF4] mb-6">Extracurriculars</h2>
-          <div className="w-24 h-1 mx-auto mb-6" style={{ background: 'linear-gradient(to right, #A3BE8C, #88C0D0)' }} />
-          <p className="text-[#ECEFF4]/55 max-w-2xl mx-auto">
-            Beyond the keyboard — leadership, community, and the pursuits that shape who I am.{' '}
-            <span style={{ color: '#88C0D0' }} className="font-medium">Click any card to learn more.</span>
-          </p>
+          <div className="w-24 h-1 mx-auto" style={{ background: 'linear-gradient(to right, #A3BE8C, #88C0D0)' }} />
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6">

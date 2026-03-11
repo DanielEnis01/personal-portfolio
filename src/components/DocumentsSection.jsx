@@ -138,46 +138,7 @@ export function DocumentsSection() {
           })}
         </div>
 
-        {/* Cert list */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl font-bold text-[#ECEFF4] text-center mb-8">Academic & Skill Highlights</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {certList.map((cert, index) => {
-              const CertIcon = cert.icon
-              return (
-                <motion.div
-                  key={cert.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.08, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -3 }}
-                  className="group p-5 rounded-xl border transition-all duration-300 backdrop-blur-sm"
-                  style={{ backgroundColor: 'rgba(59,66,82,0.5)', borderColor: 'rgba(136,192,208,0.1)' }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300"
-                      style={{ backgroundColor: 'rgba(163,190,140,0.1)' }}
-                    >
-                      <CertIcon className="w-4 h-4" style={{ color: '#A3BE8C' }} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold leading-tight mb-1" style={{ color: '#ECEFF4' }}>{cert.name}</p>
-                      <p className="text-xs font-medium" style={{ color: 'rgba(236,239,244,0.4)' }}>{cert.issuer}</p>
-                      <p className="text-xs mt-1 font-bold" style={{ color: 'rgba(163,190,140,0.7)' }}>{cert.year}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </motion.div>
+        <div className="h-px w-full mt-16" style={{ backgroundColor: 'rgba(136,192,208,0.1)' }} />
 
         {/* Footer */}
         <motion.div

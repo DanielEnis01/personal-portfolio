@@ -84,7 +84,7 @@ export function HeroSection() {
             className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
             style={{ color: 'rgba(236,239,244,0.5)' }}
           >
-            Pursuing my Bachelor's degree at UTD. I craft exceptional digital experiences and explore the depths of full stack development.
+            Pursuing my Bachelor's degree at UTD.
           </motion.p>
 
           <motion.div
@@ -135,23 +135,25 @@ export function HeroSection() {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            style={{ color: 'rgba(136,192,208,0.5)' }}
-          >
-            <ArrowDown className="w-6 h-6" />
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Scroll indicator - Direct child of section for absolute positioning */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.button 
+          onClick={scrollToProjects}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          style={{ color: 'rgba(136,192,208,0.5)' }}
+          className="hover:text-[#88C0D0] transition-colors duration-300"
+        >
+          <ArrowDown className="w-8 h-8" />
+        </motion.button>
+      </motion.div>
     </section>
   )
 }
