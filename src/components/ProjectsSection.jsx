@@ -68,7 +68,7 @@ const projects = [
     title: 'Pinglyn',
     description: 'A full-stack chatting application written from scratch with real-time messaging and user tracking.',
     longDescription:
-      'Pinglyn is a real-time chatting application built from the ground up to explore the complexities of full-stack communication systems. It uses Node.js and Socket.io for instantaneous message delivery, while MongoDB and Firebase handle user metadata and session tracking. The front end was carefully designed in [Figma](https://www.figma.com/) to ensure a premium user experience, although the project is still in active development.\n\nThis project serves as a deep dive into scalable backend architectures and the nuances of state synchronization in real-time environments.',
+      'Pinglyn is a real-time chatting application built from the ground up to explore the complexities of full-stack communication systems. It uses Node.js and Socket.io for instantaneous message delivery, while MongoDB and Firebase handle user metadata and session tracking. The front end was carefully designed in Figma to ensure a premium user experience, although the project is still in active development.\n\nThis project serves as a deep dive into scalable backend architectures and the nuances of state synchronization in real-time environments.',
     challenges: 'Implementing reliable message persistence while managing high-frequency socket events was a major technical hurdle. I had to design a robust event-handling system to prevent data loss during rapid client-server interactions.',
     learned: 'I mastered the fundamentals of real-time synchronization and learned how to translate high-fidelity Figma designs into functional, reactive React components.',
     image: '/Images/pinglyn_hero.png',
@@ -81,9 +81,9 @@ const projects = [
     title: 'Personal Website',
     description: 'A modern React portfolio website showcasing my projects and skills.',
     longDescription:
-      'This very portfolio, designed and built to showcase my work in the most polished way possible. It features a Nord-inspired dark design system, glassmorphism, and scroll-triggered animations. Built with React and Tailwind CSS, it prioritizes performance and responsive design.',
-    challenges: 'The biggest challenge was achieving the smooth, high-performance animations while maintaining accessibility. I leveraged Framer Motion and custom CSS properties to ensure the site felt premium without sacrificing speed.',
-    learned: 'I learned the fine art of motion design and how to create premium, interactive user experiences that balance aesthetics with performance.',
+      'This portfolio represents my entire journey as a developer. I actually built the very first version of this site using just raw HTML and CSS. Over time, as my skills grew, I began incorporating modern tools to improve the design and performance. I learned how to use Figma for UI prototyping, transitioned the codebase to React, and adopted Tailwind CSS for streamlined styling.\n\nToday, the site features a custom Nord-inspired dark theme, glassmorphism effects, and scroll-triggered animations that highlight how far my front-end engineering skills have come.',
+    challenges: 'The biggest challenge over the life of this project was navigating the transition from static HTML/CSS to a component-based React architecture without breaking the layout. Later on, integrating smooth framer-motion animations without hurting performance was a fun hurdle to overcome.',
+    learned: 'I gained hands-on experience in full-cycle web development, from wireframing in Figma to managing complex state and motion design in React.',
     image: '/Images/Screenshot 2025-02-02 213016.png',
     technologies: ['React', 'JavaScript', 'CSS3', 'Vite', 'Tailwind'],
     github: 'https://github.com/DanielEnis01/personal-portfolio',

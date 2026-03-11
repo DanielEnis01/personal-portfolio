@@ -5,6 +5,56 @@ import { ArrowLeft, ExternalLink, Calendar, Tag, ArrowUpRight } from 'lucide-rea
 
 const activities = [
   {
+    id: 'sae',
+    title: 'SAE Software Division',
+    organization: 'UTD SAE',
+    period: '2024 – Present',
+    category: 'Projects',
+    description: 'Member of the Society of Automotive Engineers software development team.',
+    longDescription:
+      'In the UTD SAE (Society of Automotive Engineers) Software Division, I work as part of a multi-disciplinary team to develop software solutions for automotive applications.',
+    keypoints: [
+      'Developed Azure Functions for “Star-Stream” project to process metric data from racing cars stored in Azure Event Hubs',
+      'Implemented data formatting and transmission systems to send processed data to MongoDB',
+      'Utilized Loki for logging functionality and monitoring system performance'
+    ],
+    image: '/Images/DFR-Logo.webp',
+    tags: ['Software Dev', 'Automotive', 'Team Collaboration'],
+    link: 'https://dallasformularacing.com/about',
+    projectLink: 'https://github.com/DallasFormulaRacing/Star-Stream',
+    projectLinkText: 'View Star-Stream',
+    highlights: [
+      'Contributed to real-time data processing modules',
+      'Collaborated with hardware teams for systems integration',
+      'Developed diagnostic tools for vehicle telemetry',
+    ],
+  },
+  {
+    id: 'aim',
+    title: 'AIM - AI Mentorship',
+    organization: 'AIS UTD',
+    period: '2024 – Present',
+    category: 'Projects',
+    description: 'Mentee in the Artificial Intelligence Society mentorship program.',
+    longDescription:
+      'The AIS (Artificial Intelligence Society) AIM program has offered me a deep dive into the world of AI and machine learning.',
+    keypoints: [
+      'Developed and evaluated ML models for real-world datasets',
+      'Implemented advanced data preprocessing and classification techniques',
+      'Mastered core Python AI libraries during technical sprint'
+    ],
+    image: '/Images/aim.png',
+    tags: ['AI/ML', 'Data Processing', 'Research'],
+    link: 'https://aisutd.org/',
+    projectLink: 'https://github.com/AI-Mentorship/ClosetSensei',
+    projectLinkText: 'View Vector Fit',
+    highlights: [
+      'Implemented machine learning models for data classification',
+      'Participated in research discussions on AI ethics',
+      'Gained hands-on experience with Python-based AI libraries',
+    ],
+  },
+  {
     id: 'acm',
     title: 'ACM Mentee',
     organization: 'UTD ACM',
@@ -27,52 +77,6 @@ const activities = [
       'Expanded network within the UTD CS community',
     ],
   },
-  {
-    id: 'sae',
-    title: 'SAE Software Division',
-    organization: 'UTD SAE',
-    period: '2024 – Present',
-    category: 'Community',
-    description: 'Member of the Society of Automotive Engineers software development team.',
-    longDescription:
-      'In the UTD SAE (Society of Automotive Engineers) Software Division, I work as part of a multi-disciplinary team to develop software solutions for automotive applications.',
-    keypoints: [
-      'Engineered real-time data processing modules for vehicle telemetry',
-      'Bridged hardware and software gaps through cross-team collaboration',
-      'Built diagnostic tools using low-level software engineering principles'
-    ],
-    image: '/Images/DFR-Logo.webp',
-    tags: ['Software Dev', 'Automotive', 'Team Collaboration'],
-    link: 'https://dallasformularacing.com/about',
-    highlights: [
-      'Contributed to real-time data processing modules',
-      'Collaborated with hardware teams for systems integration',
-      'Developed diagnostic tools for vehicle telemetry',
-    ],
-  },
-  {
-    id: 'aim',
-    title: 'AIM - AI Mentorship',
-    organization: 'AIS UTD',
-    period: '2024 – Present',
-    category: 'Education',
-    description: 'Mentee in the Artificial Intelligence Society mentorship program.',
-    longDescription:
-      'The AIS (Artificial Intelligence Society) AIM program has offered me a deep dive into the world of AI and machine learning.',
-    keypoints: [
-      'Developed and evaluated ML models for real-world datasets',
-      'Implemented advanced data preprocessing and classification techniques',
-      'Mastered core Python AI libraries during technical sprint'
-    ],
-    image: '/Images/aim.png',
-    tags: ['AI/ML', 'Data Processing', 'Research'],
-    link: 'https://aisutd.org/',
-    highlights: [
-      'Implemented machine learning models for data classification',
-      'Participated in research discussions on AI ethics',
-      'Gained hands-on experience with Python-based AI libraries',
-    ],
-  },
 ]
 
 const categoryColors = {
@@ -81,6 +85,7 @@ const categoryColors = {
   Education:    { text: 'text-[#EBCB8B]', bg: 'bg-[#EBCB8B]/15', border: 'border-[#EBCB8B]/30' },
   Volunteering: { text: 'text-[#B48EAD]', bg: 'bg-[#B48EAD]/15', border: 'border-[#B48EAD]/30' },
   Creative:     { text: 'text-[#D08770]', bg: 'bg-[#D08770]/15', border: 'border-[#D08770]/30' },
+  Projects:     { text: 'text-[#B48EAD]', bg: 'bg-[#B48EAD]/15', border: 'border-[#B48EAD]/30' },
 }
 
 function ActivityModal({ activity, onClose }) {
@@ -223,18 +228,36 @@ function ActivityModal({ activity, onClose }) {
         </div>
 
         {/* CTA */}
-        {activity.link && (
-          <motion.a
-            href={activity.link}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-[#2E3440] font-bold transition-all duration-300"
-            style={{ backgroundColor: '#A3BE8C', boxShadow: '0 4px 20px rgba(163,190,140,0.3)' }}
-          >
-            <ArrowUpRight className="w-4 h-4" />
-            Learn More
-          </motion.a>
-        )}
+        <div className="flex flex-wrap gap-4">
+          {activity.projectLink && (
+            <motion.a
+              href={activity.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-[#ECEFF4] font-bold transition-all duration-300 border"
+              style={{ backgroundColor: 'rgba(59,66,82,0.8)', borderColor: 'rgba(136,192,208,0.2)' }}
+            >
+              <ExternalLink className="w-4 h-4" />
+              {activity.projectLinkText || 'View Project'}
+            </motion.a>
+          )}
+          {activity.link && (
+            <motion.a
+              href={activity.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-[#2E3440] font-bold transition-all duration-300"
+              style={{ backgroundColor: '#A3BE8C', boxShadow: '0 4px 20px rgba(163,190,140,0.3)' }}
+            >
+              <ArrowUpRight className="w-4 h-4" />
+              Learn More
+            </motion.a>
+          )}
+        </div>
       </motion.div>
     </motion.div>
   )
