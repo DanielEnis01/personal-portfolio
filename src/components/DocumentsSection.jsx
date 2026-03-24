@@ -11,8 +11,8 @@ const documents = [
     glowColor: 'rgba(163,190,140,0.1)',
     borderHoverColor: 'rgba(163,190,140,0.4)',
     iconBgColor: 'rgba(163,190,140,0.12)',
-    primaryAction: { label: 'Download PDF', icon: Download, href: '/Resume/DanielEnisResume25.pdf' },
-    secondaryAction: { label: 'View Online', icon: ExternalLink, href: '/Resume/DanielEnisResume25.pdf' },
+    primaryAction: { label: 'Download PDF', icon: Download, href: '/Resume/DanielEnisResume26.pdf' },
+    secondaryAction: { label: 'View Online', icon: ExternalLink, href: '/Resume/DanielEnisResume26.pdf' },
     tags: ['Experience', 'Education', 'Projects', 'Skills'],
   },
   {
