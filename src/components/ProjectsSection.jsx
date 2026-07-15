@@ -37,6 +37,20 @@ const projects = [
     video: 'https://youtu.be/UCs95glatJU'
   },
   {
+    title: 'Sonora',
+    description: 'AI-powered reading platform and Chrome extension with per-character voice narration, multi-source book discovery, and an AI companion chat.',
+    longDescription:
+      'Sonora is a premium AI-powered reading platform built across two repositories sharing a common FastAPI + PostgreSQL backend. The web app is a Letterboxd-style book discovery and review site — users can search and browse titles pulled from the Google Books, Open Library, Hardcover, and NYT Books APIs. Its core feature is AI-narrated reading: each book has a character cast, and every character is assigned a distinct AI voice (via ElevenLabs), so narration shifts voice in real time depending on who\'s speaking. Authentication is handled through Firebase, supporting both email/password and Google Sign-In.\n\nThe companion Chrome extension (MV3) brings AI narration to any webpage — it screen-reads on-page text aloud using per-character TTS proxied through the backend to ElevenLabs, with word-level timestamp scrubbing for precise audio sync. The extension also includes an AI Companion chat tab (OpenAI-backed) that can summarize recent story events or generate imagery of the current scene. The product\'s visual identity is dark-editorial: near-black backgrounds, a single warm amber accent, Playfair Display serif typography, and monospace metadata — designed to feel literary and archival rather than like a standard SaaS dashboard.',
+    challenges: 'Coordinating real-time voice switching across a multi-character cast required tight integration between word-level timestamp data from ElevenLabs and the frontend audio pipeline. Proxying TTS through the backend while keeping latency low for the Chrome extension — which operates on arbitrary third-party pages — was a persistent constraint to optimize around.',
+    learned: 'I deepened my understanding of Chrome Extension MV3 architecture, background service workers, and the constraints of building cross-origin audio pipelines. Managing a shared backend across two distinct frontends reinforced clean API design and separation of concerns.',
+    image: '/Images/sonora_hero.png',
+    screenshots: ['/Images/sonora_screenshot.png'],
+    technologies: ['Next.js', 'FastAPI', 'PostgreSQL', 'Firebase Auth', 'ElevenLabs', 'OpenAI', 'Chrome Extension MV3'],
+    github: 'https://github.com/DanielEnis01/Sonora',
+    featured: true,
+    year: '2025',
+  },
+  {
     title: 'FastApp',
     description: 'A job application tracking system to help users organize and manage their applications.',
     longDescription:
@@ -51,6 +65,19 @@ const projects = [
     year: '2025',
   },
   {
+    title: 'Pinglyn',
+    description: 'A full-stack chatting application written from scratch with real-time messaging and user tracking.',
+    longDescription:
+      'Pinglyn is a real-time chatting application built from the ground up to explore the complexities of full-stack communication systems. It uses Node.js and Socket.io for instantaneous message delivery, while MongoDB and Firebase handle user metadata and session tracking. The front end was carefully designed in Figma to ensure a premium user experience, although the project is still in active development.\n\nThis project serves as a deep dive into scalable backend architectures and the nuances of state synchronization in real-time environments.',
+    challenges: 'Implementing reliable message persistence while managing high-frequency socket events was a major technical hurdle. I had to design a robust event-handling system to prevent data loss during rapid client-server interactions.',
+    learned: 'I mastered the fundamentals of real-time synchronization and learned how to translate high-fidelity Figma designs into functional, reactive React components.',
+    image: '/Images/pinglyn_hero.png',
+    technologies: ['Node.js', 'Socket.io', 'MongoDB', 'Firebase', 'React', 'Figma'],
+    github: 'https://github.com/Tbelkk/Pinglyn',
+    featured: true,
+    year: '2025',
+  },
+  {
     title: 'Princeton Quant Trading',
     description: 'A full-stack quantitative trading simulation platform for Princeton University.',
     longDescription:
@@ -61,19 +88,6 @@ const projects = [
     technologies: ['React', 'Next.JS', 'RESTful', 'Python'],
     github: 'https://github.com/tom05919/PQT-website-2025',
     live: 'https://princeton-quant.com',
-    featured: true,
-    year: '2025',
-  },
-  {
-    title: 'Pinglyn',
-    description: 'A full-stack chatting application written from scratch with real-time messaging and user tracking.',
-    longDescription:
-      'Pinglyn is a real-time chatting application built from the ground up to explore the complexities of full-stack communication systems. It uses Node.js and Socket.io for instantaneous message delivery, while MongoDB and Firebase handle user metadata and session tracking. The front end was carefully designed in Figma to ensure a premium user experience, although the project is still in active development.\n\nThis project serves as a deep dive into scalable backend architectures and the nuances of state synchronization in real-time environments.',
-    challenges: 'Implementing reliable message persistence while managing high-frequency socket events was a major technical hurdle. I had to design a robust event-handling system to prevent data loss during rapid client-server interactions.',
-    learned: 'I mastered the fundamentals of real-time synchronization and learned how to translate high-fidelity Figma designs into functional, reactive React components.',
-    image: '/Images/pinglyn_hero.png',
-    technologies: ['Node.js', 'Socket.io', 'MongoDB', 'Firebase', 'React', 'Figma'],
-    github: 'https://github.com/Tbelkk/Pinglyn',
     featured: true,
     year: '2025',
   },
@@ -199,6 +213,15 @@ function ProjectModal({ project, onClose }) {
                 return part
               })}
             </p>
+            {project.screenshots && project.screenshots.length > 0 && (
+              <div className="mt-6 space-y-4">
+                {project.screenshots.map((src, i) => (
+                  <div key={i} className="rounded-xl overflow-hidden border" style={{ borderColor: 'rgba(136,192,208,0.12)' }}>
+                    <img src={src} alt={`${project.title} screenshot ${i + 1}`} className="w-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {project.challenges && (
