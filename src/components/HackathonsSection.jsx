@@ -5,10 +5,30 @@ import { ArrowLeft, ExternalLink, Calendar, Tag, ArrowUpRight } from 'lucide-rea
 
 const hackathons = [
   {
+    id: 'openai-build-week-2026',
+    title: 'OpenAI Build Week',
+    organization: 'OpenAI × Devpost',
+    period: 'July 13–21, 2026',
+    category: 'Hackathon',
+    description: 'Submitted TokenGuard to the Developer Tools track of OpenAI Build Week, a global Codex and GPT-5.6 challenge.',
+    longDescription:
+      'OpenAI Build Week brought together developers, creators, founders, and students worldwide to experiment with GPT-5.6 and Codex, share their work, and compete for recognition and prizes. I submitted [TokenGuard](https://tokenguardopenai2026.onrender.com/), a local monitoring and guardrail system for AI coding sessions, to the Developer Tools track.\n\nThe challenge called for working projects built with Codex and GPT-5.6 across four tracks: Apps for Your Life, Work & Productivity, Developer Tools, and Education. TokenGuard focuses on developer safety by surfacing repeated-edit spirals, observed token use, and guardrail warnings while an AI coding session is running.',
+    challenges: 'The submission needed to communicate a complete, testable developer-tool workflow—not only a polished dashboard. That meant documenting the local daemon, live monitoring experience, Codex plugin guardrails, and the system’s current limitation around interrupting commands already in progress.',
+    learned: 'I learned how important it is to pair a novel AI developer-tool idea with a concrete, runnable experience and transparent product boundaries. The Build Week challenge also reinforced the value of showing exactly how Codex and GPT-5.6 accelerated the project workflow.',
+    image: '/Images/openai_build_week_2026.png',
+    tags: ['Codex', 'GPT-5.6', 'Developer Tools', 'TokenGuard'],
+    link: 'https://openai.devpost.com/',
+    highlights: [
+      'Submitted TokenGuard to the Developer Tools track',
+      'Built with Codex and GPT-5.6',
+      'Global online challenge run by OpenAI and Devpost',
+    ],
+  },
+  {
     id: 'hackai-2026',
     title: 'HackAi 2026',
     organization: 'HackAi',
-    period: '2026',
+    period: 'March 2026',
     category: 'Hackathon',
     description: 'Sponsor Track Winner at HackAi 2026 for commut.r.',
     longDescription:
@@ -227,31 +247,25 @@ export function HackathonsSection() {
           {hackathons.map((hackathon, index) => {
             const cat = categoryColors[hackathon.category] ?? categoryColors['Hackathon']
             return (
-              <motion.div
+              <div
                 key={hackathon.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
                 onClick={() => setSelected(hackathon)}
-                className="group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-400 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
+                className="interactive-card group cursor-pointer rounded-2xl overflow-hidden border w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
                 style={{
                   backgroundColor: 'rgba(59,66,82,0.7)',
                   borderColor: 'rgba(136,192,208,0.12)',
                 }}
               >
-                <div className="relative overflow-hidden h-44">
+                <div className="interactive-card__media relative overflow-hidden h-44">
                   <ImageWithFallback
                     src={hackathon.image}
                     alt={hackathon.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
-                    style={{ transform: 'scale(1)' }}
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 transition-opacity duration-300"
                     style={{ background: 'linear-gradient(to top, rgba(59,66,82,0.9) 0%, rgba(46,52,64,0.2) 100%)' }} />
 
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="interactive-card__overlay absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[#2E3440] text-sm font-bold"
                       style={{ backgroundColor: '#A3BE8C' }}>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -260,7 +274,7 @@ export function HackathonsSection() {
                   </div>
 
                   <div className="absolute top-3 left-3">
-                    <span className={`px-2.5 py-1 rounded-full text-xs border ${cat.bg} ${cat.text} ${cat.border} backdrop-blur-sm font-bold`}>
+                    <span className={`px-2.5 py-1 rounded-full text-xs border ${cat.bg} ${cat.text} ${cat.border} font-bold`}>
                       {hackathon.category}
                     </span>
                   </div>
@@ -285,7 +299,7 @@ export function HackathonsSection() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

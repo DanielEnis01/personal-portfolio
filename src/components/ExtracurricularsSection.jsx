@@ -290,33 +290,27 @@ export function ExtracurricularsSection() {
           {activities.map((activity, index) => {
             const cat = categoryColors[activity.category] ?? categoryColors['Community']
             return (
-              <motion.div
+              <div
                 key={activity.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
                 onClick={() => setSelected(activity)}
-                className="group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-400 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
+                className="interactive-card group cursor-pointer rounded-2xl overflow-hidden border w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
                 style={{
                   backgroundColor: 'rgba(59,66,82,0.7)',
                   borderColor: 'rgba(136,192,208,0.12)',
                 }}
               >
                 {/* Image */}
-                <div className="relative overflow-hidden h-44">
+                <div className="interactive-card__media relative overflow-hidden h-44">
                   <ImageWithFallback
                     src={activity.image}
                     alt={activity.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
-                    style={{ transform: 'scale(1)' }}
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 transition-opacity duration-300"
                     style={{ background: 'linear-gradient(to top, rgba(59,66,82,0.9) 0%, rgba(46,52,64,0.2) 100%)' }} />
 
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="interactive-card__overlay absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[#2E3440] text-sm font-bold"
                       style={{ backgroundColor: '#A3BE8C' }}>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -326,7 +320,7 @@ export function ExtracurricularsSection() {
 
                   {/* Category badge */}
                   <div className="absolute top-3 left-3">
-                    <span className={`px-2.5 py-1 rounded-full text-xs border ${cat.bg} ${cat.text} ${cat.border} backdrop-blur-sm font-bold`}>
+                    <span className={`px-2.5 py-1 rounded-full text-xs border ${cat.bg} ${cat.text} ${cat.border} font-bold`}>
                       {activity.category}
                     </span>
                   </div>
@@ -352,7 +346,7 @@ export function ExtracurricularsSection() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

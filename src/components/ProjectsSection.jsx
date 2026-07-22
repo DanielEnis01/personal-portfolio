@@ -5,6 +5,23 @@ import { ExternalLink, Github, ArrowUpRight, ArrowLeft, Code2, Calendar, Trophy,
 
 const projects = [
   {
+    title: 'TokenGuard',
+    description: 'A local monitor and guardrail system that helps developers catch AI coding-agent spirals before they waste time and tokens.',
+    longDescription:
+      'TokenGuard is a local monitoring system for AI coding sessions, built to make agent activity visible while it is happening. Its React dashboard receives live updates from a Node.js daemon that watches Codex session transcripts, tracks observed token use, and detects repeated edits to the same file as potential spirals. Developers can review session details, set edit and budget warnings, and see when a loop is still active.\n\nA Codex plugin adds a pre-tool guardrail: after TokenGuard has flagged or stopped a session, it can deny later matching file-edit requests. The system is deliberately clear about its current boundary—it can block future supported edits, but cannot interrupt a command already in progress. TokenGuard was submitted to the OpenAI Build Week Developer Tools Hackathon.',
+    challenges: 'Accurately identifying edits required detecting completed patch activity inside larger commands rather than relying on a single tool name. We also corrected token reporting so historical transcript usage is not shown as usage from the current monitoring window.',
+    learned: 'I learned that useful AI safety tooling depends on trustworthy event collection and clear boundaries between warnings, requests to stop, and actual enforcement. I also gained experience building a live local system across a React dashboard, Node.js daemon, WebSockets, and a Codex plugin.',
+    image: '/Images/tokenguard_hero.png',
+    screenshots: ['/Images/tokenguard_monitor.png'],
+    technologies: ['React', 'TypeScript', 'Node.js', 'WebSockets', 'Codex Plugin', 'Electron', 'Firebase', 'Tailwind CSS'],
+    github: 'https://github.com/DanielEnis01/TokenGuardOpenAi2026',
+    live: 'https://tokenguardopenai2026.onrender.com/',
+    devpost: 'https://devpost.com/software/tokenguard-pcli5a',
+    featured: true,
+    year: '2026',
+    achievement: 'OpenAI Build Week Developer Tools Submission',
+  },
+  {
     title: 'Vector Fit',
     description: 'AI-powered mobile app for wardrobe organization and outfit generation using computer vision and generative AI.',
     longDescription:
@@ -49,6 +66,20 @@ const projects = [
     github: 'https://github.com/DanielEnis01/Sonora',
     featured: true,
     year: '2025',
+  },
+  {
+    title: 'Discord Bot',
+    description: 'A Node.js Discord bot with commands, AI chat replies, ElevenLabs voice output, and voice-channel capabilities built around a LeBron James theme.',
+    longDescription:
+      'Discord Bot is a Node.js project that brings a playful LeBron James-themed assistant into a Discord server. Members can use prefix commands to pull up a help panel, get a themed response, and interact with the bot directly in chat. The OpenAI API lets the bot generate conversational replies, while ElevenLabs provides a voice layer for spoken responses. The implementation uses Discord.js to connect to Discord through the gateway, listen for message events, work with guilds, channels, members, permissions, and message replies, and present organized command output with rich embeds.\n\nThe project also uses @discordjs/voice for Discord voice-channel support. That companion library handles voice connections and audio playback through audio players and resources, while Discord.js supplies the bot client, event system, commands, messages, embeds, reactions, and REST/API abstractions. Together, the AI, text, and voice layers make it possible to expand a simple chat bot into a more interactive server companion.',
+    challenges: 'The main challenge was designing commands that stay entertaining without becoming confusing or noisy in a busy server. I organized the command handling around a consistent prefix and help response, while learning how Discord gateway events, permissions, message replies, embeds, and voice connection state fit together.',
+    learned: 'I learned how a Node.js service maintains a live Discord gateway connection, turns incoming events into command flows, and builds polished responses with Discord.js. I also gained experience combining OpenAI chat output, ElevenLabs voice generation, and voice-channel playback, including the lifecycle concerns of connecting to a channel, managing an audio player, and cleaning up a voice session reliably.',
+    image: '/Images/discord-bot-cover.png',
+    screenshots: ['/Images/discord-bot-screenshot.png'],
+    technologies: ['Node.js', 'Discord.js', '@discordjs/voice', 'OpenAI API', 'ElevenLabs', 'JavaScript', 'Discord API'],
+    github: 'https://github.com/DanielEnis01/lebron-bot',
+    featured: false,
+    year: '2024',
   },
   {
     title: 'FastApp',
@@ -338,21 +369,16 @@ export function ProjectsSection() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {featuredProjects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-400 w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-12px)] max-w-[500px]"
+              className="interactive-card group cursor-pointer rounded-2xl overflow-hidden border w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-12px)] max-w-[500px]"
               style={{ backgroundColor: 'rgba(59,66,82,0.7)', borderColor: 'rgba(136,192,208,0.12)' }}
             >
-              <div className="relative overflow-hidden">
-                <ImageWithFallback src={project.image} alt={project.title} className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition-all duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="interactive-card__media relative overflow-hidden">
+                <ImageWithFallback src={project.image} alt={project.title} className="w-full h-64 object-cover" />
+                <div className="absolute inset-0 bg-black/35" />
+                <div className="interactive-card__overlay absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold" style={{ backgroundColor: '#A3BE8C', color: '#2E3440' }}>
                     <ArrowUpRight className="w-4 h-4" />
                     View Details
@@ -361,14 +387,14 @@ export function ProjectsSection() {
                 <div className="absolute top-4 right-4 flex space-x-2">
                   {project.github && (
                     <motion.a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-[#ECEFF4] transition-all duration-300 backdrop-blur-md" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-[#ECEFF4] transition-transform duration-150" style={{ backgroundColor: 'rgba(0,0,0,0.78)' }}
                     >
                       <Github className="w-5 h-5" />
                     </motion.a>
                   )}
                   {project.live && (
                     <motion.a href={project.live} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-[#ECEFF4] transition-all duration-300 backdrop-blur-md" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-[#ECEFF4] transition-transform duration-150" style={{ backgroundColor: 'rgba(0,0,0,0.78)' }}
                     >
                       <ExternalLink className="w-5 h-5" />
                     </motion.a>
@@ -384,7 +410,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -394,21 +420,16 @@ export function ProjectsSection() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {otherProjects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4 }}
               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
+              className="interactive-card group cursor-pointer rounded-2xl overflow-hidden border w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
               style={{ backgroundColor: 'rgba(59,66,82,0.55)', borderColor: 'rgba(136,192,208,0.1)' }}
             >
-              <div className="relative overflow-hidden">
-                <ImageWithFallback src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="interactive-card__media relative overflow-hidden">
+                <ImageWithFallback src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="interactive-card__overlay absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold" style={{ backgroundColor: '#A3BE8C', color: '#2E3440' }}>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                     View Details
@@ -417,16 +438,16 @@ export function ProjectsSection() {
                 <div className="absolute top-3 right-3 flex space-x-2">
                   {project.github && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
-                      className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md"
-                      style={{ backgroundColor: 'rgba(0,0,0,0.65)', color: '#ECEFF4' }}
+                      className="w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-150"
+                      style={{ backgroundColor: 'rgba(0,0,0,0.8)', color: '#ECEFF4' }}
                     >
                       <Github className="w-4 h-4" />
                     </a>
                   )}
                   {project.live && (
                     <a href={project.live} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
-                      className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md"
-                      style={{ backgroundColor: 'rgba(0,0,0,0.65)', color: '#ECEFF4' }}
+                      className="w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-150"
+                      style={{ backgroundColor: 'rgba(0,0,0,0.8)', color: '#ECEFF4' }}
                     >
                       <ExternalLink className="w-4 h-4" />
                     </a>
@@ -442,7 +463,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

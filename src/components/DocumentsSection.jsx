@@ -66,14 +66,9 @@ export function DocumentsSection() {
           {documents.map((doc, index) => {
             const Icon = doc.icon
             return (
-              <motion.div
+              <div
                 key={doc.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.7 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -4 }}
-                className="group relative rounded-2xl border p-8 transition-all duration-400 overflow-hidden"
+                className="interactive-card group relative rounded-2xl border p-8 overflow-hidden"
                 style={{ backgroundColor: 'rgba(59,66,82,0.65)', borderColor: 'rgba(136,192,208,0.12)' }}
               >
                 {/* Glow */}
@@ -133,7 +128,7 @@ export function DocumentsSection() {
                     {doc.secondaryAction.label}
                   </motion.a>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

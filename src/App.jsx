@@ -1,5 +1,6 @@
 import { Navigation } from './components/Navigation'
 import { HeroSection } from './components/HeroSection'
+import { AboutSection } from './components/AboutSection'
 import { ProjectsSection } from './components/ProjectsSection'
 import { HackathonsSection } from './components/HackathonsSection'
 import { ExtracurricularsSection } from './components/ExtracurricularsSection'
@@ -16,6 +17,7 @@ function App() {
 
       <main className="relative">
         <HeroSection />
+        <AboutSection />
         <ProjectsSection />
         <HackathonsSection />
         <ExtracurricularsSection />

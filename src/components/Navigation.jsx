@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
-const navItems = ['home', 'projects', 'hackathons', 'extracurriculars', 'documents']
+const navItems = ['home', 'about', 'projects', 'hackathons', 'extracurriculars', 'documents']
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -110,7 +110,7 @@ export function Navigation() {
                     e.currentTarget.style.backgroundColor = 'transparent'
                   }}
                 >
-                  {item === 'extracurriculars' ? 'Activities' : item}
+                  {item === 'extracurriculars' ? 'Activities' : item.charAt(0).toUpperCase() + item.slice(1)}
                 </button>
               ))}
             </div>
