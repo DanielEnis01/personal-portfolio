@@ -106,8 +106,8 @@ export function HeroSection() {
             <div className="flex items-center space-x-3">
               {[
                 { icon: Github, href: 'https://github.com/DanielEnis01' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/in/daniel-enis-26b670348/' },
-                { icon: Mail, href: 'mailto:daniel@example.com' }, // Placeholder mail
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/daniel-enis' },
+                { icon: Mail, href: 'mailto:danielenis01@gmail.com' },
               ].map(({ icon: Icon, href }, index) => (
                 <motion.a
                   key={index}
