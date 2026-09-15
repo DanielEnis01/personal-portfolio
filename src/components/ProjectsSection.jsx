@@ -5,6 +5,22 @@ import { ExternalLink, Github, ArrowUpRight, ArrowLeft, Code2, Calendar, Trophy,
 
 const projects = [
   {
+    title: 'Callback',
+    description: 'AI-powered mock interview coach that reads webcam biometrics and speech in real time to score interview performance and track improvement across sessions.',
+    longDescription:
+      'Callback is an AI-powered mock interview coach built during a 36-hour hackathon at HackRice 16. The Electron desktop app runs a live, voice-driven mock interview against a candidate’s résumé and a real job posting, while a webcam-based biometric pipeline built on the SmartSpectra/Presage SDK and MediaPipe reads pulse, breathing, heart-rate variability, stress, fidgeting, gaze, and posture in real time. Every answer is scored two ways: a deterministic pass checks for STAR-method structure and filler words, while Gemini generates a qualitative assessment and a 0–100 score. Session data persists in PostgreSQL and TimescaleDB, so a user can see the same weaknesses recur across sessions and watch a trend line move as they practice, with targeted “practice this” re-drilling on whatever needs the most work.\n\nBuilt with my teammates Luke Washam and [Tyler Belken](https://github.com/Tbelkk), Callback won 1st Place in the Work & Productivity track at HackRice 16.',
+    challenges: 'Getting reliable vital-sign readings out of a consumer-grade webcam was the hardest part of the project — our heart-rate variability model failed more often than we would have liked, and we made a deliberate call to show an honest empty state rather than fabricate numbers when a reading could not be trusted. We also hit a serialization bug that corrupted Gemini’s structured output in Postgres, and had to design around free-tier API rate limits so the app degraded gracefully instead of breaking mid-session.',
+    learned: 'I learned just how failure-prone consumer-grade webcam vital-sign estimation still is, and how much deliberate design it takes to keep an LLM’s JSON output reliable enough to trust inside a data pipeline. Building the trend dashboard on TimescaleDB’s continuous aggregates also showed me how much more convincing personalization feels when it is backed by a real chart of a user’s own progress instead of a canned message.',
+    image: '/Images/callback_hero.png',
+    technologies: ['Electron', 'React', 'TypeScript', 'Python', 'Node.js', 'PostgreSQL', 'TimescaleDB', 'Gemini AI', 'Firebase'],
+    github: 'https://github.com/DanielEnis01/Callback',
+    devpost: 'https://devpost.com/software/callback-73cyk2',
+    video: 'https://youtu.be/xGpK8vvYkso',
+    featured: true,
+    year: '2026',
+    achievement: 'HackRice 16 Work & Productivity Track Winner',
+  },
+  {
     title: 'TokenGuard',
     description: 'A local monitor and guardrail system that helps developers catch AI coding-agent spirals before they waste time and tokens.',
     longDescription:

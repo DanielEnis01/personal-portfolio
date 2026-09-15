@@ -5,6 +5,26 @@ import { ArrowLeft, ExternalLink, Calendar, Tag, ArrowUpRight } from 'lucide-rea
 
 const hackathons = [
   {
+    id: 'hackrice-16',
+    title: 'HackRice 16',
+    organization: 'HackRice',
+    period: 'September 2026',
+    category: 'Hackathon',
+    description: '1st Place, Work & Productivity Track at HackRice 16 for Callback.',
+    longDescription:
+      'HackRice 16 was a 36-hour hackathon at Rice University with more than 500 participants split across four tracks: Healthcare, Finance, Games & Gamification, and Work & Productivity. My teammates Luke Washam and [Tyler Belken](https://github.com/Tbelkk) and I built Callback, an AI interview coach that reads both what a candidate says and how their body responds while saying it — pulse, breathing, stress, gaze, and posture from a webcam, paired with STAR-method and Gemini-based scoring of the answer itself. We won 1st Place in the Work & Productivity track for combining those signals into a single coaching loop that gets more useful the more a user practices.',
+    challenges: 'Coordinating three people across biometrics, backend, and interview logic in one 36-hour window meant integrating unfamiliar SDKs — SmartSpectra for pulse and MediaPipe for gaze — fast enough to have something demoable by Sunday morning, without losing the whole weekend chasing a flaky heart-rate signal.',
+    learned: 'I learned how much a hackathon rewards picking one honest signal over ten flashy ones — showing real biometric data, even when incomplete, read as more credible to judges than a polished mock-up would have. It was also a good lesson in dividing a project cleanly across three people so each piece could be built and tested in parallel.',
+    image: '/Images/callback_hero.png',
+    tags: ['Electron', 'Biometrics', 'Gemini AI', 'TimescaleDB'],
+    link: 'https://devpost.com/software/callback-73cyk2',
+    highlights: [
+      'Won 1st Place in the Work & Productivity Track',
+      'Built a real-time webcam biometric pipeline for stress, gaze, and posture',
+      'Combined STAR-method scoring with Gemini-generated interview feedback',
+    ],
+  },
+  {
     id: 'openai-build-week-2026',
     title: 'OpenAI Build Week',
     organization: 'OpenAI × Devpost',
