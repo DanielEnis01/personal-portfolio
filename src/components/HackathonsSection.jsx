@@ -15,33 +15,13 @@ const hackathons = [
       'HackRice 16 was a 36-hour hackathon at Rice University with more than 500 participants split across four tracks: Healthcare, Finance, Games & Gamification, and Work & Productivity. My teammates Luke Washam and [Tyler Belken](https://github.com/Tbelkk) and I built Callback, an AI interview coach that reads both what a candidate says and how their body responds while saying it — pulse, breathing, stress, gaze, and posture from a webcam, paired with STAR-method and Gemini-based scoring of the answer itself. We won 1st Place in the Work & Productivity track for combining those signals into a single coaching loop that gets more useful the more a user practices.',
     challenges: 'Coordinating three people across biometrics, backend, and interview logic in one 36-hour window meant integrating unfamiliar SDKs — SmartSpectra for pulse and MediaPipe for gaze — fast enough to have something demoable by Sunday morning, without losing the whole weekend chasing a flaky heart-rate signal.',
     learned: 'I learned how much a hackathon rewards picking one honest signal over ten flashy ones — showing real biometric data, even when incomplete, read as more credible to judges than a polished mock-up would have. It was also a good lesson in dividing a project cleanly across three people so each piece could be built and tested in parallel.',
-    image: '/Images/callback_hero.png',
+    image: '/Images/hackrice16_welcome.png',
     tags: ['Electron', 'Biometrics', 'Gemini AI', 'TimescaleDB'],
     link: 'https://devpost.com/software/callback-73cyk2',
     highlights: [
       'Won 1st Place in the Work & Productivity Track',
       'Built a real-time webcam biometric pipeline for stress, gaze, and posture',
       'Combined STAR-method scoring with Gemini-generated interview feedback',
-    ],
-  },
-  {
-    id: 'openai-build-week-2026',
-    title: 'OpenAI Build Week',
-    organization: 'OpenAI × Devpost',
-    period: 'July 13–21, 2026',
-    category: 'Hackathon',
-    description: 'Submitted TokenGuard to the Developer Tools track of OpenAI Build Week, a global Codex and GPT-5.6 challenge.',
-    longDescription:
-      'OpenAI Build Week brought together developers, creators, founders, and students worldwide to experiment with GPT-5.6 and Codex, share their work, and compete for recognition and prizes. I submitted [TokenGuard](https://tokenguardopenai2026.onrender.com/), a local monitoring and guardrail system for AI coding sessions, to the Developer Tools track.\n\nThe challenge called for working projects built with Codex and GPT-5.6 across four tracks: Apps for Your Life, Work & Productivity, Developer Tools, and Education. TokenGuard focuses on developer safety by surfacing repeated-edit spirals, observed token use, and guardrail warnings while an AI coding session is running.',
-    challenges: 'The submission needed to communicate a complete, testable developer-tool workflow—not only a polished dashboard. That meant documenting the local daemon, live monitoring experience, Codex plugin guardrails, and the system’s current limitation around interrupting commands already in progress.',
-    learned: 'I learned how important it is to pair a novel AI developer-tool idea with a concrete, runnable experience and transparent product boundaries. The Build Week challenge also reinforced the value of showing exactly how Codex and GPT-5.6 accelerated the project workflow.',
-    image: '/Images/openai_build_week_2026.png',
-    tags: ['Codex', 'GPT-5.6', 'Developer Tools', 'TokenGuard'],
-    link: 'https://openai.devpost.com/',
-    highlights: [
-      'Submitted TokenGuard to the Developer Tools track',
-      'Built with Codex and GPT-5.6',
-      'Global online challenge run by OpenAI and Devpost',
     ],
   },
   {
@@ -63,7 +43,27 @@ const hackathons = [
       'Developed an AI parking predictor in 24 hours',
       'Integrated real-time student data for predictions',
     ],
+  },  {
+    id: 'openai-build-week-2026',
+    title: 'OpenAI Build Week',
+    organization: 'OpenAI × Devpost',
+    period: 'July 13–21, 2026',
+    category: 'Hackathon',
+    description: 'Submitted TokenGuard to the Developer Tools track of OpenAI Build Week, a global Codex and GPT-5.6 challenge.',
+    longDescription:
+      'OpenAI Build Week brought together developers, creators, founders, and students worldwide to experiment with GPT-5.6 and Codex, share their work, and compete for recognition and prizes. I submitted [TokenGuard](https://tokenguardopenai2026.onrender.com/), a local monitoring and guardrail system for AI coding sessions, to the Developer Tools track.\n\nThe challenge called for working projects built with Codex and GPT-5.6 across four tracks: Apps for Your Life, Work & Productivity, Developer Tools, and Education. TokenGuard focuses on developer safety by surfacing repeated-edit spirals, observed token use, and guardrail warnings while an AI coding session is running.',
+    challenges: 'The submission needed to communicate a complete, testable developer-tool workflow—not only a polished dashboard. That meant documenting the local daemon, live monitoring experience, Codex plugin guardrails, and the system’s current limitation around interrupting commands already in progress.',
+    learned: 'I learned how important it is to pair a novel AI developer-tool idea with a concrete, runnable experience and transparent product boundaries. The Build Week challenge also reinforced the value of showing exactly how Codex and GPT-5.6 accelerated the project workflow.',
+    image: '/Images/openai_build_week_2026.png',
+    tags: ['Codex', 'GPT-5.6', 'Developer Tools', 'TokenGuard'],
+    link: 'https://openai.devpost.com/',
+    highlights: [
+      'Submitted TokenGuard to the Developer Tools track',
+      'Built with Codex and GPT-5.6',
+      'Global online challenge run by OpenAI and Devpost',
+    ],
   },
+
 ]
 
 const categoryColors = {
