@@ -42,7 +42,7 @@ export function AboutSection() {
           >
             <div
               className="absolute -inset-8 scale-110 bg-cover bg-center opacity-35 blur-2xl"
-              style={{ backgroundImage: 'url(/Images/daniel-profile.jpg)' }}
+              style={{ backgroundImage: 'url(/Images/daniel-profile.webp)' }}
             />
             <div className="absolute inset-0 bg-[#2E3440]/35" />
             <div className="absolute left-6 top-6 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ECEFF4]/80"
@@ -51,7 +51,7 @@ export function AboutSection() {
             </div>
             <div className="absolute inset-4 overflow-hidden rounded-[1.15rem] border" style={{ borderColor: 'rgba(236,239,244,0.2)' }}>
               <img
-                src="/Images/daniel-profile.jpg"
+                src="/Images/daniel-profile.webp"
                 alt="Daniel Enis"
                 className="h-full w-full object-cover object-[57%_50%]"
               />

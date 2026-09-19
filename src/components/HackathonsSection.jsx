@@ -15,7 +15,7 @@ const hackathons = [
       'HackRice 16 was a 36-hour hackathon at Rice University with more than 500 participants split across four tracks: Healthcare, Finance, Games & Gamification, and Work & Productivity. My teammates Luke Washam and [Tyler Belken](https://github.com/Tbelkk) and I built Callback, an AI interview coach that reads both what a candidate says and how their body responds while saying it — pulse, breathing, stress, gaze, and posture from a webcam, paired with STAR-method and Gemini-based scoring of the answer itself. We won 1st Place in the Work & Productivity track for combining those signals into a single coaching loop that gets more useful the more a user practices.',
     challenges: 'Coordinating three people across biometrics, backend, and interview logic in one 36-hour window meant integrating unfamiliar SDKs — SmartSpectra for pulse and MediaPipe for gaze — fast enough to have something demoable by Sunday morning, without losing the whole weekend chasing a flaky heart-rate signal.',
     learned: 'I learned how much a hackathon rewards picking one honest signal over ten flashy ones — showing real biometric data, even when incomplete, read as more credible to judges than a polished mock-up would have. It was also a good lesson in dividing a project cleanly across three people so each piece could be built and tested in parallel.',
-    image: '/Images/hackrice16_welcome.png',
+    image: '/Images/hackrice16_welcome.webp',
     tags: ['Electron', 'Biometrics', 'Gemini AI', 'TimescaleDB'],
     link: 'https://devpost.com/software/callback-73cyk2',
     highlights: [
@@ -35,7 +35,7 @@ const hackathons = [
       'This was my first hackathon ever attended and, fortunately enough, my first win. My partner [Tyler Belken](https://github.com/Tbelkk) and I came up with the idea for commut.r as commuters ourselves. We won the NebulaLabs Sponsored track, which was one of the 4 main sponsors of the event, due to our unique use of their API during development. The student data provided from their API was the root of our formula that calculated predictions. It was a very good experience overall and I look forward to future hackathons.',
     challenges: 'Developing a reliable parking prediction algorithm in under 24 hours while learning the Nebula API on the fly was an intense challenge. We had to quickly iterate on our logic to ensure the predictions were both accurate and useful.',
     learned: 'I learned how to work under extreme time constraints and the power of leveraging community-driven APIs to solve local problems. It also taught me the importance of rapid prototyping and effective teamwork.',
-    image: '/Images/hackai_logo_v2.png',
+    image: '/Images/hackai_logo_v2.webp',
     tags: ['Nebula API', 'Flask', 'React', 'Innovation'],
     link: 'https://hackai-2026.devpost.com/',
     highlights: [
@@ -54,7 +54,7 @@ const hackathons = [
       'OpenAI Build Week brought together developers, creators, founders, and students worldwide to experiment with GPT-5.6 and Codex, share their work, and compete for recognition and prizes. I submitted [TokenGuard](https://tokenguardopenai2026.onrender.com/), a local monitoring and guardrail system for AI coding sessions, to the Developer Tools track.\n\nThe challenge called for working projects built with Codex and GPT-5.6 across four tracks: Apps for Your Life, Work & Productivity, Developer Tools, and Education. TokenGuard focuses on developer safety by surfacing repeated-edit spirals, observed token use, and guardrail warnings while an AI coding session is running.',
     challenges: 'The submission needed to communicate a complete, testable developer-tool workflow—not only a polished dashboard. That meant documenting the local daemon, live monitoring experience, Codex plugin guardrails, and the system’s current limitation around interrupting commands already in progress.',
     learned: 'I learned how important it is to pair a novel AI developer-tool idea with a concrete, runnable experience and transparent product boundaries. The Build Week challenge also reinforced the value of showing exactly how Codex and GPT-5.6 accelerated the project workflow.',
-    image: '/Images/openai_build_week_2026.png',
+    image: '/Images/openai_build_week_2026.webp',
     tags: ['Codex', 'GPT-5.6', 'Developer Tools', 'TokenGuard'],
     link: 'https://openai.devpost.com/',
     highlights: [
